@@ -6,6 +6,8 @@ from ollama import ChatResponse
 
 display_settings = DisplaySettings("PLN", [])
 
+IMAGE = "ocr-invoice.png"
+
 def run(model: str, ctx = 8192, role = "user") -> ChatResponse:
     response = ollama.chat(model=model, messages=[
         {
@@ -31,7 +33,7 @@ def run(model: str, ctx = 8192, role = "user") -> ChatResponse:
             10. If you are being asked for couple results within one line in prompt please return them as a dictonary within the <KEY> provided.
             """,
             'images': {
-                "ocr-invoice.png"
+                IMAGE
             }
         }
     ], options={"num_ctx": ctx})
