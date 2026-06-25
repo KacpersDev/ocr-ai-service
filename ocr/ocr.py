@@ -31,7 +31,7 @@ def run(model: str, ctx = 8192, role = "user") -> ChatResponse:
             10. If you are being asked for couple results within one line in prompt please return them as a dictonary within the <KEY> provided.
             """,
             'images': {
-                "test.jpg"
+                "ocr-invoice.png"
             }
         }
     ], options={"num_ctx": ctx})

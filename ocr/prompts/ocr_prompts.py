@@ -35,10 +35,14 @@ PROMPTS = {
         "prompt": "Can you please read the invoice company that was billed in the invoice and the following company name <KEY>company_name</KEY>, full address <KEY>full_address</KEY>, email<KEY>email</KEY>, city <KEY>city</KEY>",
         "json_display": "invoice_billed_company"
     },
+    "invoice_discount": {
+        "prompt": "Can you please read the invoice price discount",
+        "json_display": "invoice_discount"
+    }
 }
 
 PROMPTS_TO_EXTRACT = ["total_amount", "total_amount_vat", "currency", "invoice_number", "invoice_issue_date", "invoice_due_date",
-"invoice_items", "invoice_my_comapny", "invoice_billed_company"]
+"invoice_items", "invoice_my_comapny", "invoice_billed_company", "invoice_discount"]
 
 def read_prompt(prompt: str) -> str:
     return f"{PROMPTS[prompt]['prompt']}. <KEY>{PROMPTS[prompt]['json_display']}</KEY>" 
