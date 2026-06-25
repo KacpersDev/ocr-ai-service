@@ -28,9 +28,10 @@ def run(model: str, ctx = 8192, role = "user") -> ChatResponse:
             7. Do not change any data, which were found on invoice.
             8. Always return data as they are
             9. Watch out for dots or commas in amounts.
+            10. If you are being asked for couple results within one line in prompt please return them as a dictonary within the <KEY> provided.
             """,
             'images': {
-                "ocr-invoice.png"
+                "test.jpg"
             }
         }
     ], options={"num_ctx": ctx})
